@@ -1,0 +1,24 @@
+spring:
+# 数据库配置
+    datasource:
+        url: jdbc:mysql://localhost:3306/config_center?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false
+        username: root
+        password: LPFlpf2580
+        driver-class-name: com.mysql.cj.jdbc.Driver
+
+    flyway:
+        enabled: true
+        encoding: utf-8
+      #sql文件存放位置
+        locations: classpath:migrations
+      #版本记录表格
+        table: schemas_version
+        baseline-on-migrate: true
+        validate-on-migrate: false
+
+# mybatis配置
+mybatis:
+  # 配置映射类所在包名
+    type-aliases-package: com.huyan.configcenter.dao.model
+  # 配置mapper xml文件所在路径
+    mapper-locations: classpath:mappers/**.xml

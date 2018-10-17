@@ -25,6 +25,7 @@
     select *
     from config_user
     where id = #{id}
+    
   </select>
 
   <delete id="deleteById">
